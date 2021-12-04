@@ -1,0 +1,30 @@
+{
+  "baseUrl": "https://easiconnectdev.myguardiangroup.com",
+  "defaultCommandTimeout": 20000,
+  "requestTimeout": 120000,
+  "pageLoadTimeout": 60000,
+  "videoUploadOnPasses": false,
+  "chromeWebSecurity": false,
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "testFiles": "**/*.js",
+  "ignoreTestFiles": [
+    "*.ts",
+    "*.md"
+  ],
+  "env": {
+    "Username": "admin1@dev.com",
+    "Password": "origin-baseman-flutist",
+    "token": "3a9c642e-03f8-4ed5-b214-7c1b7af9de8a",
+    "basicAuth": "Basic bWVhYmR1bGxhaDEzMTE5QGdtYWlsLmNvbTozYTljNjQyZS0wM2Y4LTRlZDUtYjIxNC03YzFiN2FmOWRlOGE=",
+    "provider_token": "04af95d9-7188-4277-ab67-8e4950216bd2",
+    "provider_basicAuth": "Basic bWVhYmR1bGxhaDEzMTE5K3Byb3ZpZGVyQGdtYWlsLmNvbTowNGFmOTVkOS03MTg4LTQyNzctYWI2Ny04ZTQ5NTAyMTZiZDI=",
+    "v1": "api_services/v1/api",
+    "v2": "api_services/v2/api"
+  },
+  "projectId": "yjbdc6"
+}
