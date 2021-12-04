@@ -1,0 +1,308 @@
+{
+    "ClaimDiagnosisCodes": {
+        "Claim_id": 81278,
+        "DiagnosisCode": "873.63",
+        "DiagnosisDescription": "OPEN WOUND OF TOOTH (BROKEN), UNCOMPLICATED",
+        "ConfirmReferralID": 0,
+        "PrescribedDrugID": 0
+    },
+    "SearchDiagnosisCodes": {
+        "TotalRecords": 38,
+        "Result": [
+            {
+                "Diagnosis_Code": "520.2",
+                "Description": "ABNORMALITIES OF SIZE AND FORM OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "521.2",
+                "Description": "ABRASION OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "523.6",
+                "Description": "ACCRETIONS ON TEETH"
+            },
+            {
+                "Diagnosis_Code": "V58.75",
+                "Description": "AFTERCARE FOLLOWING SURGERY OF THE TEETH, ORAL CAV"
+            },
+            {
+                "Diagnosis_Code": "521.6",
+                "Description": "ANKYLOSIS OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.3",
+                "Description": "ANOMALIES OF TOOTH POSITION OF FULLY ERUPTED TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.31",
+                "Description": "CROWDING OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "521",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "521.04",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, ARRESTED CARIES"
+            },
+            {
+                "Diagnosis_Code": "521.09",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, CARIES OTH"
+            },
+            {
+                "Diagnosis_Code": "521.00",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, CARIES, UNSPEC"
+            },
+            {
+                "Diagnosis_Code": "521.02",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, DENTINE CARIES"
+            },
+            {
+                "Diagnosis_Code": "521.01",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, ENAMEL CARIES"
+            },
+            {
+                "Diagnosis_Code": "521.05",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, ODONTOCLASIA"
+            },
+            {
+                "Diagnosis_Code": "521.03",
+                "Description": "DISEASES OF HARD TISSUES OF TEETH, PULP CARIES"
+            },
+            {
+                "Diagnosis_Code": "521.3",
+                "Description": "EROSION OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.37",
+                "Description": "EXCESSIVE INTEROCCLUSAL DISTANCE OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.32",
+                "Description": "EXCESSIVE SPACING OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "525.0",
+                "Description": "EXFOLIATION OF TEETH DUE TO SYSTEMIC CAUSES"
+            },
+            {
+                "Diagnosis_Code": "524.33",
+                "Description": "HORIZONTAL DISPLACEMENT OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.36",
+                "Description": "INSUFFICIENT INTEROCCLUSAL DISTANCE OF TEETH (RIDG"
+            },
+            {
+                "Diagnosis_Code": "525.1",
+                "Description": "LOSS OF TEETH DUE TO ACCIDENT, EXTRACTION, OR LOCA"
+            },
+            {
+                "Diagnosis_Code": "520.3",
+                "Description": "MOTTLED TEETH"
+            },
+            {
+                "Diagnosis_Code": "525",
+                "Description": "OTH DISEASES AND CONDITIONS OF THE TEETH AND SUPPO"
+            },
+            {
+                "Diagnosis_Code": "521.8",
+                "Description": "OTH SPEC DISEASES OF HARD TISSUES OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "525.8",
+                "Description": "OTH SPEC DISORDERS OF THE TEETH AND SUPPORTING STR"
+            },
+            {
+                "Diagnosis_Code": "525.10",
+                "Description": "OTHER DISEASES OF TEETH, SUPPORTING STRUC, ACQ ABS"
+            },
+            {
+                "Diagnosis_Code": "525.11",
+                "Description": "OTHER DISEASES OF TEETH, SUPPORTING STRUC, LOSS OF"
+            },
+            {
+                "Diagnosis_Code": "525.13",
+                "Description": "OTHER DISEASES OF TEETH, SUPPORTING STRUC, LOSS OF"
+            },
+            {
+                "Diagnosis_Code": "525.19",
+                "Description": "OTHER DISEASES OF TEETH, SUPPORTING STRUC, OTHER L"
+            },
+            {
+                "Diagnosis_Code": "525.12",
+                "Description": "OTHER DISEASES OF TEETH, SUPPORTING STRUC, TOOTH L"
+            },
+            {
+                "Diagnosis_Code": "524.35",
+                "Description": "ROTATION OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "520.1",
+                "Description": "SUPERNUMERARY TEETH"
+            },
+            {
+                "Diagnosis_Code": "520.7",
+                "Description": "TEETHING SYNDROME"
+            },
+            {
+                "Diagnosis_Code": "521.9",
+                "Description": "UNSPEC DISEASE OF HARD TISSUES OF TEETH"
+            },
+            {
+                "Diagnosis_Code": "525.9",
+                "Description": "UNSPEC DISORDER OF THE TEETH AND SUPPORTING STRUCT"
+            },
+            {
+                "Diagnosis_Code": "524.75",
+                "Description": "VERTICAL DISPLACEMENT OF ALVEOLUS AND TEETH"
+            },
+            {
+                "Diagnosis_Code": "524.34",
+                "Description": "VERTICAL DISPLACEMENT OF TEETH"
+            }
+        ]
+    },
+    "SearchProcedureCodes": {
+        "TotalRecords": 9,
+        "Result": [
+            {
+                "Procedure_Code": "70320",
+                "Description": "FULL MOUTH X-RAY OF TEETH"
+            },
+            {
+                "Procedure_Code": "D9971",
+                "Description": "ODONTOPLASTY 1-2 TEETH"
+            },
+            {
+                "Procedure_Code": "D4261",
+                "Description": "OSSEOUS SURGL-3TEETHPERQUAD"
+            },
+            {
+                "Procedure_Code": "D4342",
+                "Description": "PERIODONTAL SCALING 1-3TEETH"
+            },
+            {
+                "Procedure_Code": "D5520",
+                "Description": "REPLACE DENTURE TEETH COMPLT"
+            },
+            {
+                "Procedure_Code": "D5640",
+                "Description": "REPLACE PART DENTURE TEETH"
+            },
+            {
+                "Procedure_Code": "D7290",
+                "Description": "REPOSITIONING OF TEETH"
+            },
+            {
+                "Procedure_Code": "70300",
+                "Description": "X-RAY EXAM OF TEETH"
+            },
+            {
+                "Procedure_Code": "70310",
+                "Description": "X-RAY EXAM OF TEETH"
+            }
+        ]
+    },
+    "DosageTypes": [
+        {
+            "DosageTypeID": 0,
+            "Description": "None"
+        },
+        {
+            "DosageTypeID": 1,
+            "Description": "Administer_as_directed"
+        },
+        {
+            "DosageTypeID": 2,
+            "Description": "Apply_as_directed"
+        },
+        {
+            "DosageTypeID": 3,
+            "Description": "Capsule"
+        },
+        {
+            "DosageTypeID": 4,
+            "Description": "Cream"
+        },
+        {
+            "DosageTypeID": 5,
+            "Description": "Drops"
+        },
+        {
+            "DosageTypeID": 6,
+            "Description": "g"
+        },
+        {
+            "DosageTypeID": 7,
+            "Description": "Inhalations"
+        },
+        {
+            "DosageTypeID": 8,
+            "Description": "mg"
+        },
+        {
+            "DosageTypeID": 9,
+            "Description": "ml"
+        },
+        {
+            "DosageTypeID": 10,
+            "Description": "Power"
+        },
+        {
+            "DosageTypeID": 11,
+            "Description": "Suppository"
+        },
+        {
+            "DosageTypeID": 12,
+            "Description": "Tablet"
+        },
+        {
+            "DosageTypeID": 13,
+            "Description": "Take_as_directed"
+        },
+        {
+            "DosageTypeID": 14,
+            "Description": "Use_as_directed"
+        },
+        {
+            "DosageTypeID": 15,
+            "Description": "Other"
+        }
+    ],
+    "SearchProviders": {
+        "TotalRecords": 2,
+        "Result": [
+            {
+                "Provider_id": "TTD1199_1",
+                "ProviderUD": "D1199_1",
+                "TerritoryID": "TT",
+                "Last_Name": "MILES",
+                "First_Name": "ANDREW",
+                "Middle_Name": "",
+                "Name_Preffix": "",
+                "Name_Suffix": "",
+                "Address1": "SMILE DESIGNS,",
+                "Address2": "HOBSON’S COURT, 13-17 KEATE STREET.",
+                "City": "SAN FERNANDO",
+                "Country": "TRINIDAD",
+                "Active": true
+            },
+            {
+                "Provider_id": "TTD1099_1",
+                "ProviderUD": "D1099_1",
+                "TerritoryID": "TT",
+                "Last_Name": "ANDREW",
+                "First_Name": "COLIN",
+                "Middle_Name": "",
+                "Name_Preffix": "",
+                "Name_Suffix": "",
+                "Address1": "SMILE DESIGNS,",
+                "Address2": "HOBSON’S COURT, 13-17 KEATE STREET.",
+                "City": "SAN FERNANDO",
+                "Country": "TRINIDAD",
+                "Active": true
+            }
+        ]
+    }
+}

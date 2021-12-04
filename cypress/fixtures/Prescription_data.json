@@ -1,0 +1,20 @@
+{
+    "post": {
+        "Prescription_ID": 0,
+        "easiClaim_Claim_ID": "39390",
+        "Member_ID": "TPI1973-00001-03",
+        "Status": 0,
+        "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
+        "CreatedBy": "JM0313I"
+    },
+    "get": {},
+    "put": {
+        "Prescription_ID": 1116,
+        "easiClaim_Claim_ID": "81735",
+        "Member_ID": "TPI1973-00001-03",
+        "Status": 0,
+        "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
+        "CreatedBy": "JM0313I"
+    },
+    "delete": {}
+}
