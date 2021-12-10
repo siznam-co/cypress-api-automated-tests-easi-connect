@@ -1,15 +1,15 @@
 {
-  "name": "torque-portal",
+  "name": "easi-connect",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
-    "product_specs": "cypress run --spec **/4-CustomerVehicle.feature --record --key daf25f2b-aa0c-40f0-8c9f-8a850f0ef6c5"
+    "api:tests": "cypress run --spec 'cypress/integration/*.js'"
   },
   "author": "Abdullah",
-  "license": "Torque360",
+  "license": "eFiniti",
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.0.0",
     "cypress": "^8.7.0",
