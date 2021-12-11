@@ -211,3 +211,37 @@ Cypress.Commands.add("SearchProcedureCodes", (choice) => {
         })
     })
 })
+
+Cypress.Commands.add("ListClaims", () => {
+    cy.request({
+        method: "POST",
+        url: "/" + Cypress.env("v2") + "/ListClaims",
+        headers: {
+            "Authorization": Cypress.env("provider_basicAuth"),
+            "Content-Type": "application/json"
+        },
+        body: {
+            "FromDate": "2021-12-09 00:45",
+            "ToDate": "2022-12-9 09:45"
+        }
+    }).then((response) => {
+        expect(response.status).equal(200)
+        // cy.log(JSON.stringify(response.body.Data))
+        return parseInt(response.body.Data.TotalRecords)
+    })
+})
+
+Cypress.Commands.add("MemberPrescriptions", () => {
+    cy.request({
+        method: "GET",
+        url: "/" + Cypress.env("v2") + "/MemberPrescriptions/" + Cypress.env("member_ID_1"),
+        headers: {
+            "Authorization": Cypress.env("provider_basicAuth"),
+            "Content-Type": "application/json"
+        }
+    }).then((response) => {
+        expect(response.status).equal(200)
+        // cy.log(JSON.stringify(response.body.Data))
+        return response.body.Data.length
+    })
+})

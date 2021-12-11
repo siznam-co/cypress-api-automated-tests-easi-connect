@@ -2,6 +2,14 @@
 
 describe("Claims Endpoints", () => {
     before(() => {
+        cy.ListClaims().then(noOfClaims => [
+            window.previsousNoOfClaims = noOfClaims
+        ]) // Note the claims before creating new.
+
+        cy.MemberPrescriptions().then(noOfMemberPrescriptions => {
+            window.MemberPrescriptions = noOfMemberPrescriptions
+        }) // Note the MemberPrescriptions before creating new.
+
         // cy.defineGlobalVariables()
         cy.postClaimHeader() // Setting window.easiClaim_Claim_ID in this promise (in Commands.js)
         cy.putClaimHeader() // Setting window.easiClaim_Claim_ID in this promise (in Commands.js)
@@ -138,16 +146,78 @@ describe("Claims Endpoints", () => {
                     expect(response.status).equal(200)
                     // cy.log(JSON.stringify(response.body.Data))
 
+                    // Member_ID assertion is missing due to a defect. 
+                    dsl.response_Body.easiClaim_Claim_ID = parseInt(window.easiClaim_Claim_ID)
+                    // dsl.response_Body.member_id = Cypress.env("member_ID_2")
+                    dsl.response_Body.Prescription_ID = window.Prescription_ID
+                    dsl.response_Body.DateCreated = response.body.Data.DateCreated
+
+                    // cy.log(JSON.stringify(response.body.Data))
+                    // cy.log(JSON.stringify(dsl.response_Body))
+                    expect(response.body.Data).to.deep.equal(dsl.response_Body)
+                })
+            })
+        })
+    })
+
+    it("PUT Prescription", () => {
+
+        cy.fixture("Prescription_data").then(data => {
+            let dsl = data.put
+            dsl.request_body.Prescription_ID = parseInt(window.Prescription_ID)
+            dsl.request_body.easiClaim_Claim_ID = parseInt(window.easiClaim_Claim_ID)
+            dsl.request_body.member_ID = Cypress.env("member_ID_1")
+
+            cy.request({
+                method: "POST",
+                url: "/" + Cypress.env("v2") + "/Prescription",
+                headers: {
+                    "Authorization": Cypress.env("provider_basicAuth"),
+                    "Content-Type": "application/json"
+                },
+                body: dsl.request_body
+            }).then((response) => {
+                expect(response.status).equal(200)
+                // cy.log(JSON.stringify(response.body.Data))
+                window.Prescription_ID = response.body.Data.Prescription_ID
+
+                // Asserting Get Prescription to check whether it was POSTED or not.
+                cy.request({
+                    method: "GET",
+                    url: "/" + Cypress.env("v2") + "/Prescription/" + window.Prescription_ID,
+                    headers: {
+                        "Authorization": Cypress.env("provider_basicAuth"),
+                        "Content-Type": "application/json"
+                    }
+                }).then((response) => {
+                    expect(response.status).equal(200)
+                    // cy.log(JSON.stringify(response.body.Data))
+
+                    // Member_ID assertion is missing due to a defect. 
+                    dsl.response_Body.easiClaim_Claim_ID = parseInt(window.easiClaim_Claim_ID)
+                    // dsl.response_Body.member_id = Cypress.env("member_ID_1")
+                    dsl.response_Body.Prescription_ID = window.Prescription_ID
+                    dsl.response_Body.DateCreated = response.body.Data.DateCreated
+
+                    // cy.log(JSON.stringify(response.body.Data))
+                    // cy.log(JSON.stringify(dsl.response_Body))
+                    expect(response.body.Data).to.deep.equal(dsl.response_Body)
                 })
             })
         })
     })
 
     it("POST PrescribedDrug", () => {
-        cy.SearchDiagnosisCodes(0) // Setting window.DiagnosisCode in this promise (in Commands.js)
 
-        cy.fixture("example").then(data => {
-            // let dsl = data.PrescribedDrug
+        cy.fixture("PrescribedDrug_data").then(data => {
+            let dsl = data.post
+
+            dsl.request_body.easiClaim_Claim_ID = parseInt(window.easiClaim_Claim_ID)
+            dsl.request_body.PrescriptionID = parseInt(window.Prescription_ID)
+            dsl.request_body.Member_ID = Cypress.env("member_ID_2")
+            dsl.request_body.RelatedDiagnosisCode = window.DiagnosisCode
+
+            cy.log(JSON.stringify(dsl.request_body))
             cy.request({
                 method: "POST",
                 url: "/" + Cypress.env("v2") + "/PrescribedDrug",
@@ -155,76 +225,126 @@ describe("Claims Endpoints", () => {
                     "Authorization": Cypress.env("provider_basicAuth"),
                     "Content-Type": "application/json"
                 },
-                body: {
-                    "PrescribedDrugID": 0,
-                    "PrescriptionID": window.Prescription_ID,
-                    "easiClaim_Claim_ID": window.easiClaim_Claim_ID,
-                    "Member_ID": Cypress.env("member_ID_1"),
-                    "Status": 0,
-                    "DrugCode": "ABB00060001",
-                    "DrugName": "",
-                    "ExpiryDate": "2023-12-29T10:30:52.7673627-05:00",
-                    "RelatedDiagnosisCode": window.DiagnosisCode,
-                    "AllowSubstitution": 0,
-                    "Repeat": 2,
-                    "DosageAmount": 1,
-                    "DosageType": 9,
-                    "Period": 1,
-                    "DosagePerPeriod": 1,
-                    "DosagePeriodType": 0,
-                    "OtherDosagePeriod": "",
-                    "OtherDosageType": "",
-                    "Comments": "",
-                    "OriginalUnits": 0,
-                    "LastUpdated": "2021-11-29T10:30:52.7673627-05:00",
-                    "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
-                    "CreatedBy": "JM0313I"
-                }
+                body: dsl.request_body
             }).then((response) => {
                 expect(response.status).equal(200)
                 // cy.log(JSON.stringify(response.body.Data))
                 // expect(JSON.stringify(response.body.Data)).to.deep.equal(JSON.stringify(dsl))
                 window.PrescribedDrugID = response.body.Data.PrescribedDrugID
+
+                dsl.response_Body.PrescribedDrugID = parseInt(response.body.Data.PrescribedDrugID)
+                dsl.response_Body.Claim_id = parseInt(window.easiClaim_Claim_ID)
+                dsl.response_Body.PrescriptionID = parseInt(window.Prescription_ID)
+                dsl.response_Body.MemberUD = Cypress.env("member_ID_2")
+                dsl.response_Body.RelatedDiagnosisCode = window.DiagnosisCode
+                dsl.response_Body.ExpiryDate = response.body.Data.ExpiryDate
+                dsl.response_Body.DateCreated = response.body.Data.DateCreated
+                dsl.response_Body.LastUpdated = response.body.Data.LastUpdated
+
+                // cy.log(JSON.stringify(response.body.Data))
+                // cy.log(JSON.stringify(dsl.response_Body))
+
+                expect(response.body.Data).to.deep.equal(dsl.response_Body)
+
+                // Asserting Get PrescribedDrug to check whether it was POSTED or not.
+                cy.request({
+                    method: "GET",
+                    url: "/" + Cypress.env("v2") + "/PrescribedDrug/" + window.PrescribedDrugID,
+                    headers: {
+                        "Authorization": Cypress.env("provider_basicAuth"),
+                        "Content-Type": "application/json"
+                    },
+                    body: dsl.request_body
+                }).then((response) => {
+                    expect(response.status).equal(200)
+                    // cy.log(JSON.stringify(response.body.Data))
+                    // expect(JSON.stringify(response.body.Data)).to.deep.equal(JSON.stringify(dsl))
+
+                    dsl.response_Body.PrescribedDrugID = parseInt(window.PrescribedDrugID)
+                    dsl.response_Body.Claim_id = parseInt(window.easiClaim_Claim_ID)
+                    dsl.response_Body.PrescriptionID = parseInt(window.Prescription_ID)
+                    dsl.response_Body.MemberUD = Cypress.env("member_ID_2")
+                    dsl.response_Body.RelatedDiagnosisCode = window.DiagnosisCode
+                    dsl.response_Body.ExpiryDate = response.body.Data.ExpiryDate
+                    dsl.response_Body.DateCreated = response.body.Data.DateCreated
+                    dsl.response_Body.LastUpdated = response.body.Data.LastUpdated
+
+                    expect(response.body.Data).to.deep.equal(dsl.response_Body)
+
+                })
             })
         })
     })
 
-    // it("POST Prescription", () => {
-    //     cy.fixture("Prescription_data").then(data => {
-    //         let dsl = data.post
-    //         cy.request({
-    //             method: "POST",
-    //             url: "/" + Cypress.env("v2") + "/Prescription",
-    //             headers: {
-    //                 "Authorization": Cypress.env("provider_basicAuth"),
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: dsl
-    //         }).then((response) => {
-    //             expect(response.status).equal(200)
-    //             window.Prescription_ID = JSON.stringify(response.body.Data.Prescription_ID)
-    //         })
-    //     })
-    // })
+    it("PUT PrescribedDrug", () => {
 
-    // it("PUT Prescription", () => {
-    //     cy.fixture("Prescription_data").then(data => {
-    //         let dsl = data.put
-    //         dsl.Prescription_ID = window.Prescription_ID
-    //         cy.request({
-    //             method: "PUT",
-    //             url: "/" + Cypress.env("v2") + "/Prescription",
-    //             headers: {
-    //                 "Authorization": Cypress.env("provider_basicAuth"),
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: dsl
-    //         }).then((response) => {
-    //             expect(response.status).equal(200)
-    //             expect(JSON.stringify(response.body.Data.Prescription_ID)).to.equal(window.Prescription_ID)
-    //         })
-    //     })
-    // })
+        cy.fixture("PrescribedDrug_data").then(data => {
+            let dsl = data.put
+
+            dsl.request_body.PrescribedDrugID = parseInt(window.PrescribedDrugID)
+            dsl.request_body.easiClaim_Claim_ID = parseInt(window.easiClaim_Claim_ID)
+            dsl.request_body.PrescriptionID = parseInt(window.Prescription_ID)
+            dsl.request_body.Member_ID = Cypress.env("member_ID_1")
+            dsl.request_body.RelatedDiagnosisCode = window.DiagnosisCode
+
+            cy.request({
+                method: "PUT",
+                url: "/" + Cypress.env("v2") + "/PrescribedDrug",
+                headers: {
+                    "Authorization": Cypress.env("provider_basicAuth"),
+                    "Content-Type": "application/json"
+                },
+                body: dsl.request_body
+            }).then((response) => {
+                expect(response.status).equal(200)
+                // cy.log(JSON.stringify(response.body.Data))
+                // expect(JSON.stringify(response.body.Data)).to.deep.equal(JSON.stringify(dsl))
+
+                dsl.response_Body.PrescribedDrugID = parseInt(window.PrescribedDrugID)
+                dsl.response_Body.Claim_id = parseInt(window.easiClaim_Claim_ID)
+                dsl.response_Body.PrescriptionID = parseInt(window.Prescription_ID)
+                dsl.response_Body.MemberUD = Cypress.env("member_ID_2") // Doesn't work.
+                dsl.response_Body.RelatedDiagnosisCode = window.DiagnosisCode
+                dsl.response_Body.ExpiryDate = response.body.Data.ExpiryDate
+                dsl.response_Body.DateCreated = response.body.Data.DateCreated
+                dsl.response_Body.LastUpdated = response.body.Data.LastUpdated
+                dsl.response_Body.DosageAmount = response.body.Data.DosageAmount
+
+
+                // cy.log(JSON.stringify(response.body.Data))
+                // cy.log(JSON.stringify(dsl.response_Body))
+
+                expect(response.body.Data).to.deep.equal(dsl.response_Body)
+
+                // Asserting Get PrescribedDrug to check whether it was POSTED or not.
+                cy.request({
+                    method: "GET",
+                    url: "/" + Cypress.env("v2") + "/PrescribedDrug/" + window.PrescribedDrugID,
+                    headers: {
+                        "Authorization": Cypress.env("provider_basicAuth"),
+                        "Content-Type": "application/json"
+                    },
+                    body: dsl.request_body
+                }).then((response) => {
+                    expect(response.status).equal(200)
+                    // cy.log(JSON.stringify(response.body.Data))
+                    // expect(JSON.stringify(response.body.Data)).to.deep.equal(JSON.stringify(dsl))
+
+                    dsl.response_Body.PrescribedDrugID = parseInt(window.PrescribedDrugID)
+                    dsl.response_Body.Claim_id = parseInt(window.easiClaim_Claim_ID)
+                    dsl.response_Body.PrescriptionID = parseInt(window.Prescription_ID)
+                    dsl.response_Body.MemberUD = Cypress.env("member_ID_2")
+                    dsl.response_Body.RelatedDiagnosisCode = window.DiagnosisCode
+                    dsl.response_Body.ExpiryDate = response.body.Data.ExpiryDate
+                    dsl.response_Body.DateCreated = response.body.Data.DateCreated
+                    dsl.response_Body.LastUpdated = response.body.Data.LastUpdated
+
+                    expect(response.body.Data).to.deep.equal(dsl.response_Body)
+
+                })
+            })
+        })
+    })
 
     it("POST EstimateClaim", () => {
 
@@ -263,6 +383,16 @@ describe("Claims Endpoints", () => {
                 expect(response.body.Data[0].easiClaim_claim_id).to.equal(parseInt(window.easiClaim_Claim_ID))
                 // window.PrescribedDrugID = response.body.Data.PrescribedDrugID
             })
+        })
+    })
+
+    after(() => {
+        cy.ListClaims().then(noOfClaims => [
+            expect(window.previsousNoOfClaims).be.equal(noOfClaims - 1)
+        ])
+
+        cy.MemberPrescriptions().then(noOfMemberPrescriptions => {
+            expect(window.MemberPrescriptions).be.equal(noOfMemberPrescriptions - 1)
         })
     })
 })

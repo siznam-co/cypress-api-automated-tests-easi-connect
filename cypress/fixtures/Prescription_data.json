@@ -9,43 +9,62 @@
             "CreatedBy": "JM0313I"
         },
         "response_Body": {
-            "easiClaim_claim_id": 81801,
-            "claim_status": "NEW",
-            "PCMclaim_id": "",
-            "provider_id": "P1057",
-            "DateOfService": "2021-12-09T14:56:53.263",
-            "member_id": "TPI1973-00001-01",
-            "user_id": "abdullah.efiniti@gmail.com",
-            "ScanTypeCode": 0,
-            "dateCreated": "2021-12-09T14:56:53.28",
-            "DateLastModified": "2021-12-09T14:57:09.877",
-            "Comment": "Claim header created by Bot.",
-            "ReferringID": "",
-            "FacilityID": "",
-            "AuthorizationNumber": "",
-            "PatientAcct": "",
-            "RefNum": null,
-            "AddressLine1": "C/O VEDAISH MAHARAJ",
-            "AddressLine2": "LENOX BARROW'S BRANCH",
-            "City": "CHAGUANAS",
-            "State": "TT",
-            "Country": "TRINIDAD",
-            "Zip": "",
-            "FirstName": "RIKARD",
-            "LastName": "HARRICHARAN",
-            "Plan": "RODNEY HARRICHARAN",
-            "Gender": "M",
-            "DOB": "1978-02-23T00:00:00"
+            "Prescription_ID": 1156,
+            "easiClaim_Claim_ID": 81795,
+            "Member_ID": null,
+            "Status": 0,
+            "DateCreated": "2021-12-09T11:30:52.767",
+            "CreatedBy": "abdullah.efiniti@gmail.com",
+            "PrescribedBy": {
+                "Provider_id": "P1057",
+                "ProviderUD": null,
+                "TerritoryID": null,
+                "Last_Name": "Pharmacy",
+                "First_Name": "ADC",
+                "Middle_Name": "",
+                "Name_Preffix": "",
+                "Name_Suffix": "",
+                "Address1": "25 Hollis Avenue",
+                "Address2": "",
+                "City": "Arima",
+                "Country": "",
+                "Active": false
+            },
+            "PrescribedDrugs": null
         }
     },
-    "get": {},
     "put": {
-        "Prescription_ID": 1116,
-        "easiClaim_Claim_ID": "81735",
-        "Member_ID": "TPI1973-00001-03",
-        "Status": 0,
-        "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
-        "CreatedBy": "JM0313I"
-    },
-    "delete": {}
+        "request_body": {
+            "Prescription_ID": 0,
+            "easiClaim_Claim_ID": "39390",
+            "Member_ID": "TPI1973-00001-01",
+            "Status": 1,
+            "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
+            "CreatedBy": "JM0313I"
+        },
+        "response_Body": {
+            "Prescription_ID": 1156,
+            "easiClaim_Claim_ID": 81795,
+            "Member_ID": null,
+            "Status": 1,
+            "DateCreated": "2021-12-09T11:30:52.767",
+            "CreatedBy": "abdullah.efiniti@gmail.com",
+            "PrescribedBy": {
+                "Provider_id": "P1057",
+                "ProviderUD": null,
+                "TerritoryID": null,
+                "Last_Name": "Pharmacy",
+                "First_Name": "ADC",
+                "Middle_Name": "",
+                "Name_Preffix": "",
+                "Name_Suffix": "",
+                "Address1": "25 Hollis Avenue",
+                "Address2": "",
+                "City": "Arima",
+                "Country": "",
+                "Active": false
+            },
+            "PrescribedDrugs": null
+        }
+    }
 }
