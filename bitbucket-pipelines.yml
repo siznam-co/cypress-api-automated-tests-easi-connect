@@ -1,0 +1,33 @@
+image: cypress/base:14.16.0
+
+## job definition for running E2E tests in parallel
+e2e: &e2e
+  name: E2E tests
+  caches:
+    - node
+    - cypress
+  script:
+    - npm run api:tests
+  artifacts:
+    # store any generates images and videos as artifacts
+    - cypress/screenshots/**
+    - cypress/videos/**
+
+pipelines:
+  default:
+    - step:
+        name: Install dependencies
+        caches:
+          - npm
+          - cypress
+          - node
+        script:
+          - npm ci
+    - parallel:
+        # run N steps in parallel
+        - step:
+            <<: *e2e
+definitions:
+  caches:
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress
