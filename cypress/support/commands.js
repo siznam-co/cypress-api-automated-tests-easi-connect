@@ -102,18 +102,18 @@ Cypress.Commands.add("postClaimHeader", () => {
             }).then((response) => {
                 expect(response.status).equal(200)
                 // cy.log(JSON.stringify(response.body.Data))
-                dsl.response_Body.easiClaim_claim_id = parseInt(window.easiClaim_Claim_ID)
-                dsl.response_Body.provider_id = Cypress.env("Provider_ID_2")
-                dsl.response_Body.member_id = Cypress.env("member_ID_2")
-                dsl.response_Body.DateOfService = response.body.Data.DateOfService
-                dsl.response_Body.dateCreated = response.body.Data.dateCreated
-                dsl.response_Body.DateLastModified = response.body.Data.DateLastModified
-                dsl.response_Body.DOB = response.body.Data.DOB
+                dsl.response_body.easiClaim_claim_id = parseInt(window.easiClaim_Claim_ID)
+                dsl.response_body.provider_id = Cypress.env("Provider_ID_2")
+                dsl.response_body.member_id = Cypress.env("member_ID_2")
+                dsl.response_body.DateOfService = response.body.Data.DateOfService
+                dsl.response_body.dateCreated = response.body.Data.dateCreated
+                dsl.response_body.DateLastModified = response.body.Data.DateLastModified
+                dsl.response_body.DOB = response.body.Data.DOB
 
                 // cy.log(JSON.stringify(response.body.Data))
-                // cy.log(JSON.stringify(dsl.response_Body))
+                // cy.log(JSON.stringify(dsl.response_body))
 
-                expect(response.body.Data).to.deep.equal(dsl.response_Body)
+                expect(response.body.Data).to.deep.equal(dsl.response_body)
             })
         })
     })
@@ -153,16 +153,16 @@ Cypress.Commands.add("putClaimHeader", () => {
             }).then((response) => {
                 expect(response.status).equal(200)
                 // cy.log(JSON.stringify(response.body.Data))
-                dsl.response_Body.easiClaim_claim_id = parseInt(window.easiClaim_Claim_ID)
-                dsl.response_Body.provider_id = Cypress.env("Provider_ID_1")
-                dsl.response_Body.member_id = Cypress.env("member_ID_1")
-                dsl.response_Body.DateOfService = response.body.Data.DateOfService
-                dsl.response_Body.dateCreated = response.body.Data.dateCreated
-                dsl.response_Body.DateLastModified = response.body.Data.DateLastModified
-                dsl.response_Body.DOB = response.body.Data.DOB
-                dsl.response_Body.Comment = parseInt(window.easiClaim_Claim_ID) + ": " + dsl.response_Body.Comment
+                dsl.response_body.easiClaim_claim_id = parseInt(window.easiClaim_Claim_ID)
+                dsl.response_body.provider_id = Cypress.env("Provider_ID_1")
+                dsl.response_body.member_id = Cypress.env("member_ID_1")
+                dsl.response_body.DateOfService = response.body.Data.DateOfService
+                dsl.response_body.dateCreated = response.body.Data.dateCreated
+                dsl.response_body.DateLastModified = response.body.Data.DateLastModified
+                dsl.response_body.DOB = response.body.Data.DOB
+                dsl.response_body.Comment = parseInt(window.easiClaim_Claim_ID) + ": " + dsl.response_body.Comment
 
-                expect(response.body.Data).to.deep.equal(dsl.response_Body)
+                expect(response.body.Data).to.deep.equal(dsl.response_body)
             })
         })
     })

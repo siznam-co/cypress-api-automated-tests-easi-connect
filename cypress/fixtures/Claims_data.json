@@ -4,7 +4,7 @@
             "request_body": {
                 "Comment": "Claim header created by Bot."
             },
-            "response_Body": {
+            "response_body": {
                 "easiClaim_claim_id": 81801,
                 "claim_status": "NEW",
                 "PCMclaim_id": "",
@@ -38,7 +38,7 @@
             "request_body": {
                 "Comment": "Claim header updated by Bot."
             },
-            "response_Body": {
+            "response_body": {
                 "easiClaim_claim_id": 81801,
                 "claim_status": "NEW",
                 "PCMclaim_id": "",
@@ -233,7 +233,7 @@
                 "PrescribedDrugID": 0,
                 "PrescriptionID": 0
             },
-            "response_Body": {
+            "response_body": {
                 "DiagnosisDescription": null,
                 "ConfirmReferralID": 0,
                 "PrescribedDrugID": 0,
@@ -292,7 +292,46 @@
                 "PlaceOfService": 13,
                 "DrugInfo": "More than one to be taken"
             },
-            "response_Body": {
+            "response_body": {
+                "easiClaim_claim_id": 81845,
+                "line_id": 6731,
+                "DateOfService": "2021-12-10T06:34:14.5",
+                "procedure_code": "70320",
+                "procedure_description": null,
+                "diagnosis_code": "520.2",
+                "EOB_code": "",
+                "EOB_Codes": null,
+                "Units": 2,
+                "CostPerUnit": 120.0,
+                "Fee": 240.0,
+                "Copay": 0.0,
+                "Ineligible": 0.0,
+                "Deductible": 0.0,
+                "easiClaimLiability": 0.0,
+                "patientPay": 0.0,
+                "OralArea": null,
+                "PlaceOfService": {
+                    "PlaceOfServiceUd": "13",
+                    "Name": "Pharmacy",
+                    "Active": true
+                },
+                "Modifier": null,
+                "DrugInfo": "More than one to be taken",
+                "ConfirmReferralID": 0,
+                "PrescriptionID": 0,
+                "PrescribedDrugID": 0
+            }
+        },
+        "put": {
+            "request_body": {
+                "Units": 2,
+                "CostPerUnit": "120",
+                "OralArea": "",
+                "Modifier": "",
+                "PlaceOfService": 13,
+                "DrugInfo": "More than one to be taken"
+            },
+            "response_body": {
                 "easiClaim_claim_id": 81845,
                 "line_id": 6731,
                 "DateOfService": "2021-12-10T06:34:14.5",

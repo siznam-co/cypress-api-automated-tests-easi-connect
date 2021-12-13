@@ -21,7 +21,7 @@
             "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
             "CreatedBy": "JM0313I"
         },
-        "response_Body": {
+        "response_body": {
             "Status": 0,
             "DrugCode": "ABB00060001",
             "DrugName": "Amoxil Suspension 250mg/5ml",
@@ -82,7 +82,7 @@
             "DateCreated": "2021-11-29T10:30:52.7673627-05:00",
             "CreatedBy": "JM0313I"
         },
-        "response_Body": {
+        "response_body": {
             "Status": 0,
             "DrugCode": "33889",
             "DrugName": "ARTERY TRANSPOSE/ENDOVAS TAA",

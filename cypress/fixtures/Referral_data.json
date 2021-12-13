@@ -1,0 +1,95 @@
+{
+    "post": {
+        "request_body": {
+            "ReferralID": 0,
+            "Comments": "There are no other options",
+            "ReferToOther": "",
+            "ReferToProviderType": 6,
+            "CreatedBy": "JM0313I"
+        },
+        "response_body": {
+            "Status": 0,
+            "HealthSys_ClaimID": "",
+            "RelatedDiagnosis": {
+                "Diagnosis_Code": "520.2",
+                "Description": "ABNORMALITIES OF SIZE AND FORM OF TEETH"
+            },
+            "ReferrerUserID": "",
+            "ReferToProviderType": 6,
+            "ReferToOther": "",
+            "ExpiryDate": "2021-12-12T15:42:44.953",
+            "Comments": "There are no other options",
+            "ReferedService": {
+                "Procedure_Code": "D5640",
+                "Description": "REPLACE PART DENTURE TEETH"
+            },
+            "TerritoryID": "",
+            "CreatedBy": "abdullah.efiniti@gmail.com",
+            "DateCreated": "2021-12-11T15:42:44.94",
+            "LastUpdated": "2021-12-11T15:42:44.94",
+            "VisitDate": "0001-01-01T00:00:00",
+            "SeenByUserID": ""
+        }
+    },
+    "put": {
+        "request_body": {
+            "ReferralID": 0,
+            "Comments": "Updated.",
+            "ReferToOther": "",
+            "ReferToProviderType": 6,
+            "CreatedBy": "JM0313I"
+        },
+        "response_body": {
+            "Status": 0,
+            "HealthSys_ClaimID": "",
+            "RelatedDiagnosis": {
+                "Diagnosis_Code": "520.2",
+                "Description": "ABNORMALITIES OF SIZE AND FORM OF TEETH"
+            },
+            "ReferrerUserID": "",
+            "ReferToProviderType": 6,
+            "ReferToOther": "",
+            "ExpiryDate": "2021-12-12T15:42:44.953",
+            "Comments": "Updated.",
+            "ReferedService": {
+                "Procedure_Code": "D5640",
+                "Description": "REPLACE PART DENTURE TEETH"
+            },
+            "TerritoryID": "",
+            "CreatedBy": "abdullah.efiniti@gmail.com",
+            "DateCreated": "2021-12-11T15:42:44.94",
+            "LastUpdated": "2021-12-11T15:42:44.94",
+            "VisitDate": "0001-01-01T00:00:00",
+            "SeenByUserID": ""
+        }
+    },
+    "": {
+        "Referral_ID": 1063,
+        "Status": 0,
+        "Claim_id": 81920,
+        "MemberUD": "TPI1973-00001-01",
+        "HealthSys_ClaimID": "",
+        "RelatedDiagnosisCode": "250.00",
+        "RelatedDiagnosis": {
+            "Diagnosis_Code": "250.00",
+            "Description": "DIABETES NO COMPLICATION, TYPE II OR UNSPEC, NOT U"
+        },
+        "ReferrerUserID": "",
+        "ReferToProviderID": "TTMS1015_1",
+        "ReferToProviderType": 6,
+        "ReferToOther": "TTMS1015_1",
+        "ExpiryDate": "2021-12-12T14:01:30.833",
+        "Comments": "asd",
+        "ReferedServiceCode": "D5640",
+        "ReferedService": {
+            "Procedure_Code": "D5640",
+            "Description": "REPLACE PART DENTURE TEETH"
+        },
+        "TerritoryID": "",
+        "CreatedBy": "abdullah.efiniti@gmail.com",
+        "DateCreated": "2021-12-11T14:01:30.82",
+        "LastUpdated": "2021-12-11T14:01:30.82",
+        "VisitDate": "0001-01-01T00:00:00",
+        "SeenByUserID": ""
+    }
+}
