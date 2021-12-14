@@ -7,7 +7,7 @@ e2e: &e2e
     - node
     - cypress
   script:
-    - npm run api:tests
+    - npx cypress run --record --key c6c383d0-645e-470e-a05b-fc90ef23bafa
   artifacts:
     # store any generates images and videos as artifacts
     - cypress/screenshots/**

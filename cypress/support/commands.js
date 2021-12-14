@@ -231,10 +231,25 @@ Cypress.Commands.add("ListClaims", () => {
     })
 })
 
-Cypress.Commands.add("MemberPrescriptions", () => {
+Cypress.Commands.add("MemberPrescriptions", (provid) => {
     cy.request({
         method: "GET",
-        url: "/" + Cypress.env("v2") + "/MemberPrescriptions/" + Cypress.env("member_ID_1"),
+        url: "/" + Cypress.env("v2") + "/MemberPrescriptions/" + provid,
+        headers: {
+            "Authorization": Cypress.env("provider_basicAuth"),
+            "Content-Type": "application/json"
+        }
+    }).then((response) => {
+        expect(response.status).equal(200)
+        // cy.log(JSON.stringify(response.body.Data))
+        return response.body.Data.length
+    })
+})
+
+Cypress.Commands.add("MemberReferrals", (member_ID) => {
+    cy.request({
+        method: "GET",
+        url: "/" + Cypress.env("v2") + "/MemberReferrals/" + member_ID,
         headers: {
             "Authorization": Cypress.env("provider_basicAuth"),
             "Content-Type": "application/json"

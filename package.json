@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
-    "api:tests": "cypress run --spec 'cypress/integration/*.js' --record --key c6c383d0-645e-470e-a05b-fc90ef23bafa"
+    "api:tests": "cypress run --spec 'cypress/integration/*.js' --record --key c6c383d0-645e-470e-a05b-fc90ef23bafa",
+    "api:tests:headed": "cypress run --spec 'cypress/integration/*.js' --headed --browser chrome"
   },
   "author": "Abdullah",
   "license": "eFiniti",

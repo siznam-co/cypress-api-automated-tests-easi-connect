@@ -11,9 +11,11 @@
     "runMode": 2,
     "openMode": 0
   },
-  "testFiles": "**/*.js",
+  "testFiles": [
+    "main.spec.js",
+    "*.js"
+  ],
   "ignoreTestFiles": [
-    "*.ts",
     "*.md"
   ],
   "env": {
