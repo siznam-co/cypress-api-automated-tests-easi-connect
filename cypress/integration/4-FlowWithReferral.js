@@ -6,9 +6,9 @@ describe("Claims Endpoints", () => {
             window.previsousNoOfClaims = noOfClaims
         ]) // Note the claims before creating new.
 
-        cy.MemberPrescriptions().then(noOfMemberPrescriptions => {
-            window.MemberPrescriptions = noOfMemberPrescriptions
-        }) // Note the MemberPrescriptions before creating new.
+        // cy.MemberPrescriptions().then(noOfMemberPrescriptions => {
+        //     window.MemberPrescriptions = noOfMemberPrescriptions
+        // }) // Note the MemberPrescriptions before creating new.
 
         // cy.defineGlobalVariables()
         cy.postClaimHeader() // Setting window.easiClaim_Claim_ID in this promise (in Commands.js)

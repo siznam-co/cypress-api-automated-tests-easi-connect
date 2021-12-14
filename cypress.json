@@ -12,8 +12,7 @@
     "openMode": 0
   },
   "testFiles": [
-    "main.spec.js",
-    "*.js"
+    "main.spec.js"
   ],
   "ignoreTestFiles": [
     "*.md"
